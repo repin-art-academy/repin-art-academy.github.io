@@ -19,25 +19,25 @@ class SliderComponent {
             this._element.style.display = `flex`;
             this._element.style.flexDirection = `column`;
             this._element.style.transform = `scale(0.7)`;
-            let levels = [];
+            let levelElements = [];
             const clearColors = () => {
-                levels.forEach((level) => {
-                    level.style.backgroundColor = `#fff`;
+                levelElements.forEach((levelElement) => {
+                    levelElement.style.backgroundColor = `#fff`;
                 });
             };
             for (let i = 0; i < this.levelNumber; i++) {
-                levels.push(document.createElement(`div`));
-                levels[i].style.width = `100`;
-                levels[i].style.height = `${100 / this.levelNumber}%`;
-                levels[i].style.boxSizing = `border-box`;
-                levels[i].style.border = `1px solid #000000`;
-                levels[i].addEventListener(`click`, () => {
+                levelElements.push(document.createElement(`div`));
+                levelElements[i].style.width = `100`;
+                levelElements[i].style.height = `${100 / this.levelNumber}%`;
+                levelElements[i].style.boxSizing = `border-box`;
+                levelElements[i].style.border = `1px solid #000000`;
+                levelElements[i].addEventListener(`click`, () => {
                     clearColors();
-                    levels[i].style.backgroundColor = this.color;
+                    levelElements[i].style.backgroundColor = this.color;
                     this.changeModel(i);
                     this.renderMap();
                 });
-                this._element.appendChild(levels[i]);
+                this._element.appendChild(levelElements[i]);
             }
             window.containerElement.getElement().appendChild(this._element);
         }

@@ -1,0 +1,11 @@
+.information {
+    display: block;
+}
+.map-link {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+.map-link:hover {
+    color:cadetblue;
+}

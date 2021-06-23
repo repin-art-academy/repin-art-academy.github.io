@@ -30,4 +30,5 @@ window.FLOORNUMBER = 3;
 window.MAPWIDTH = 90;
 window.EPOCHCOLOR = `#f00`;
 window.FLOORCOLOR = `#00f`;
+window.ROOMOVERCOLOR = `0.5`;
 window.render(ACADEMY);

@@ -9,17 +9,17 @@
             });
             epoch.floors.forEach((floor, j) => {
                 academyModel[i].map.push({
-                    floor: new MapComponent(i, j),
+                    floor: new MapComponent(i, j, floor),
                     rooms: [],
                 });
-                floor.forEach(room => {
+                /*floor.forEach(room => {
                     academyModel[i].map[j].rooms.push({
                         x: room.x,
                         y: room.y,
                         width: room.width,
                         height: room.height,
                     });
-                });
+                });*/
             });
         });
         academyModel[0].map[0].floor.show();
