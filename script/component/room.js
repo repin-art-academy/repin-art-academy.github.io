@@ -20,16 +20,16 @@ class RoomComponent {
             this._element.style.top = `${this.y}%`;
             this._element.style.width = `${this.width}%`;
             this._element.style.height = `${this.height}%`;
-            this._element.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+            this._element.style.backgroundColor = `rgba(255, 255, 255, ${window.ROOMOUTCOLOR})`;
         }
         return this._element;
     }
     addListeners() {
         this.getElement().addEventListener(`mouseover`, () => {
-            this.getElement().style.backgroundColor = `rgba(0, 0, 0, ${window.ROOMOVERCOLOR})`;
+            this.getElement().style.backgroundColor = `rgba(255, 255, 255, ${window.ROOMOVERCOLOR})`;
         });
         this.getElement().addEventListener(`mouseout`, () => {
-            this.getElement().style.backgroundColor = `rgba(0, 0, 0, 0)`;
+            this.getElement().style.backgroundColor = `rgba(255, 255, 255, ${window.ROOMOUTCOLOR})`;
         });
     }
     hide() {
