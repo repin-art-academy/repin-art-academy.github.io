@@ -1,25 +1,19 @@
 (() => {
     window.render = academyData => {
         window.containerElement = new ContainerComponent();
+        let epochs = [];
         let academyModel = [];
         academyData.forEach((epoch, i) => {
             academyModel.push({
                 time: epoch.time,
                 map: [],
             });
+            epochs.push(epoch.time);
             epoch.floors.forEach((floor, j) => {
                 academyModel[i].map.push({
                     floor: new MapComponent(i, j, floor),
                     rooms: [],
                 });
-                /*floor.forEach(room => {
-                    academyModel[i].map[j].rooms.push({
-                        x: room.x,
-                        y: room.y,
-                        width: room.width,
-                        height: room.height,
-                    });
-                });*/
             });
         });
         academyModel[0].map[0].floor.show();
@@ -35,7 +29,7 @@
             });
             academyModel[map.epoch].map[map.floor].floor.show();
         }).bind(this);
-        const epochSlider = new EpochSliderComponent(map, renderMap);
+        const epochSlider = new EpochSliderComponent(map, renderMap, epochs);
         const floorSlider = new FloorSliderComponent(map, renderMap);
         epochSlider.getElement();
         floorSlider.getElement();
